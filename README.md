@@ -5,17 +5,20 @@
 ## 长图H5项目
 我所掌握的长图项目是公司基于[cocos](https://www.cocos.com/)所搭建的框架来实现的，主要是通过**html**，**css**和**javascript**等一系列前端语言实现的一个移动端用户长屏H5互动页面。
 ## 目录
-   * [简易操作流程图](https://github.com/Jjing95/md-study2/edit/main/README.md#1%E7%AE%80%E6%98%93%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE)
-   * [长图设计稿处理规范问题](https://github.com/Jjing95/md-study2/edit/main/README.md#2%E9%95%BF%E5%9B%BE%E8%AE%BE%E8%AE%A1%E7%A8%BF%E5%A4%84%E7%90%86%E8%A7%84%E8%8C%83%E9%97%AE%E9%A2%98)
-       - [psd目录结构示意图](https://github.com/Jjing95/md-study2/edit/main/README.md#1psd%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE)
-       - [需要分部加载时的psd](https://github.com/Jjing95/md-study2/edit/main/README.md#2%E9%9C%80%E8%A6%81%E5%88%86%E9%83%A8%E5%8A%A0%E8%BD%BD%E6%97%B6%E7%9A%84psd)
-       - [长图部分图层命名规范示意图与详解](https://github.com/Jjing95/md-study2/edit/main/README.md#3%E9%95%BF%E5%9B%BE%E9%83%A8%E5%88%86%E5%9B%BE%E5%B1%82%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E7%A4%BA%E6%84%8F%E5%9B%BE%E4%B8%8E%E8%AF%A6%E8%A7%A3)
-   * [帧动画、音效和分部加载配置文件的规范](https://github.com/Jjing95/md-study2/edit/main/README.md#3%E5%B8%A7%E5%8A%A8%E7%94%BB%E9%9F%B3%E6%95%88%E5%92%8C%E5%88%86%E9%83%A8%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E8%8C%83)
-       - [帧动画配置文件（ani_config.js）](https://github.com/Jjing95/md-study2/edit/main/README.md#1%E5%B8%A7%E5%8A%A8%E7%94%BB%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6ani_configjs)
-       - [音效配置文件（effect_config.js）](https://github.com/Jjing95/md-study2/edit/main/README.md#2%E9%9F%B3%E6%95%88%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6effect_configjs)
-       - [分部加载配置文件（res_config.js）](https://github.com/Jjing95/md-study2/edit/main/README.md#3-%E5%88%86%E9%83%A8%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6res_configjs)
-   * [项目代码中的关键文件]()
-       - [index.html]()
+   * [简易操作流程图](https://github.com/Jjing95/md-study2#1%E7%AE%80%E6%98%93%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE)
+   * [长图设计稿处理规范问题](https://github.com/Jjing95/md-study2#2%E9%95%BF%E5%9B%BE%E8%AE%BE%E8%AE%A1%E7%A8%BF%E5%A4%84%E7%90%86%E8%A7%84%E8%8C%83%E9%97%AE%E9%A2%98)
+       - [psd目录结构示意图](https://github.com/Jjing95/md-study2#1psd%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE)
+       - [需要分部加载时的psd](https://github.com/Jjing95/md-study2#2%E9%9C%80%E8%A6%81%E5%88%86%E9%83%A8%E5%8A%A0%E8%BD%BD%E6%97%B6%E7%9A%84psd)
+       - [长图部分图层命名规范示意图与详解](https://github.com/Jjing95/md-study2#3%E9%95%BF%E5%9B%BE%E9%83%A8%E5%88%86%E5%9B%BE%E5%B1%82%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E7%A4%BA%E6%84%8F%E5%9B%BE%E4%B8%8E%E8%AF%A6%E8%A7%A3)
+   * [帧动画、音效和分部加载配置文件的规范](https://github.com/Jjing95/md-study2#3%E5%B8%A7%E5%8A%A8%E7%94%BB%E9%9F%B3%E6%95%88%E5%92%8C%E5%88%86%E9%83%A8%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E8%8C%83)
+       - [帧动画配置文件（ani_config.js）](https://github.com/Jjing95/md-study2#1%E5%B8%A7%E5%8A%A8%E7%94%BB%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6ani_configjs)
+       - [音效配置文件（effect_config.js）](https://github.com/Jjing95/md-study2#2%E9%9F%B3%E6%95%88%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6effect_configjs)
+       - [分部加载配置文件（res_config.js）](https://github.com/Jjing95/md-study2#3-%E5%88%86%E9%83%A8%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6res_configjs)
+   * [项目代码中的关键文件](https://github.com/Jjing95/md-study2#4%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E6%96%87%E4%BB%B6)
+       - [index.html](https://github.com/Jjing95/md-study2/blob/main/README.md#1indexhtml)
+       - [BaseScene.js](https://github.com/Jjing95/md-study2#2basescenejs)
+       - [game.js](https://github.com/Jjing95/md-study2#3gamejs)
+       - [TLayer.js](https://github.com/Jjing95/md-study2#4tlayerjs)
 ### 1、简易操作流程图
 下图是我对于长途项目的整体流程的一个简单描述，细节部分请接着往下看。
 <img src="./sop.jpg" alt="image" width="474px" height="295px" align="center">
