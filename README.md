@@ -14,6 +14,7 @@
        - [帧动画配置文件（ani_config.js）](#1%E5%B8%A7%E5%8A%A8%E7%94%BB%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6ani_configjs)
        - [音效配置文件（effect_config.js）](#2%E9%9F%B3%E6%95%88%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6effect_configjs)
        - [分步加载配置文件（res_config.js）](#3-%E5%88%86%E6%AD%A5%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6res_configjs)
+   * [命令行语句](#4%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%AF%AD%E5%8F%A5)
    * [分步加载](#4%E5%88%86%E6%AD%A5%E5%8A%A0%E8%BD%BD)
    * [代码中的关键文件](#5%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E6%96%87%E4%BB%B6)
        - [index.html](#1indexhtml)
@@ -45,8 +46,8 @@
 
 ### 3）图层命名规范
 <img src="./eg_btn_ani.png" alt="image">  
-   按钮相关的图层需要在文件名后面加上 **--type button**
-
+   按钮相关的图层需要在文件名后面加上 **--type button**  
+   
 <img src="./eg_ani.jpg" alt="image">  
    帧动画的文件组名需要在名字后面加上 **--type animation**  
 
@@ -88,7 +89,15 @@ game.resList=[
 ```text
 123是psd处理时a后面的数字 0，500，2900是指开始加载的位置（提前加载），14318是最大的位置（也就是最后的位置），false代表是否加载过，8，2，2对应精灵图数分别有多少
 ```
-## 4、分步加载
+## 4、命令行语句
+命令行                | 含义
+:-------------------- | :---
+npm run export2       | 获取所有图层信息（位置、类型、名字等）
+npm run export2000 n  | 获取背景图(n为psd的后缀)
+npm run pack2000      | 获取精灵图
+npm run compile       | 压缩部署得到game.min.js
+npm run upload_cos    | 上传cdn
+## 5、分步加载
    在处理图层时需要注意所有元素都需要处理，但是不需要写入信息和打包，背景和所有按钮都放在一开始就加载的**psd**里;  
    将需要分步加载的资源整理分成不同的**psd**文件，然后剩下必须要加载的整合成一个**psd**，处理记录信息，并分开来拼合成精灵图，这样需要使用哪个资源就只需要加载该资源所在的精灵图，剩下来的就不需要加载了;  
    在处理完图层和数据之后要在**config.js**里面把和后面加载的东西一样的部分给删掉，防止预加载;  
@@ -125,7 +134,7 @@ loadElse: function (num, name, callback) {
     callback && callback(num, name);
 },
 ```
-## 5、代码中的关键文件
+## 6、代码中的关键文件
 ### 1）index.html
 设计实现项目加载页内容和适配原则以及引入原生css文件以及部分需要提前引入的js资源库，下方为简单示例
 ```html
