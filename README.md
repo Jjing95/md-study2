@@ -34,7 +34,7 @@
 #### 2）需要分步加载时的psd
 * **game.psd**  放置所有图层，只进行`npm run export2`操作，获取所有图层信息（位置，类型等）
 * **game_n.psd**  根据图层的长度均分成n份，放置n份长图的图层，进行`npm run export2000 n`和`npm run pack2000`操作，获取精灵图和背景图（不需要管psd中图层的位置和层级）</br>
-**注意：背景和所有的按钮需要放在一开始就加载的psd中**
+***注意：背景和所有的按钮需要放在一开始就加载的psd中***
 
 #### 3）长图部分图层命名规范示意图与详解
 * <img src="./eg_btn_ani.png" alt="image">
@@ -80,25 +80,25 @@ game.resList=[
 ```javascript
 //TLayer.js
 addElse: function (num, name, callback) {
-	  var self = this;
-	  game['loadElse'](num, name, function (num, name) {
-    		// console.log(game['resources']['res' + name])
-    		cc.loader.load(game['resources']['res' + name],
-		    function (result, count, loadedCount) {
-	    		// console.log(result)
-		    },
-		    function () {
-	    		  for (var i = 0; i < num; i++) {
-				        cc.spriteFrameCache.addSpriteFrames(game['baseUrl'] + 'res/' + name + '/GameAssets_' + i + '.plist', game['baseUrl'] + 'res/' + name + '/GameAssets_' + i + '.png');
-	    		  }
-	    		  self.initUI(name);
-	    		  callback && callback()
-		    });
-	  })
+    var self = this;
+    game['loadElse'](num, name, function (num, name) {
+        // console.log(game['resources']['res' + name])
+    	cc.loader.load(game['resources']['res' + name],
+	function (result, count, loadedCount) {
+	    // console.log(result)
+	},
+	function () {
+	    for (var i = 0; i < num; i++) {
+		cc.spriteFrameCache.addSpriteFrames(game['baseUrl'] + 'res/' + name + '/GameAssets_' + i + '.plist', game['baseUrl'] + 'res/' + name + '/GameAssets_' + i + '.png');
+	    }
+	    self.initUI(name);
+	    callback && callback()
+	});
+    })
 },
 //game.js
 loadElse: function (num, name, callback) {
-	  var g_resources2 = this['resources']['res' + name];
+    var g_resources2 = this['resources']['res' + name];
     // console.log(num)
     //加载对应年代的精灵图
     for (var i = 0; i < num; i++) {
@@ -265,7 +265,7 @@ showAni: function (callback) {
 }
 ```
 * 控制元素进行动画</br>
-&emsp;一个元素依次执行一个或多个动画
+一个元素依次执行一个或多个动画
 ```javascript
 item.runAction(
     cc.sequence(   //sequence是依次执行
@@ -276,7 +276,7 @@ item.runAction(
     )
 )
 ```
-&emsp;一个元素同步执行多个动画
+&emsp;&emsp;一个元素同步执行多个动画
 ```javascript
 item.runAction(
     cc.spawn(    //spqwn是同步执行
@@ -285,7 +285,7 @@ item.runAction(
     )
 )
 ```
-&emsp;一个元素反复执行一个动画
+&emsp;&emsp;一个元素反复执行一个动画
 ```javascript
 item.runAction(
     cc.repeatForever(  //repeatForever是一直反复执行
@@ -294,4 +294,4 @@ item.runAction(
 )
 ```
 </br>
-至此，以上就是我在长图项目的学习过程中，对于长图开发的流程以及知识梳理。
+至此，以上就是我在长图项目的学习过程中，对于长图开发的流程理解以及知识梳理。
