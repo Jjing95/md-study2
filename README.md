@@ -8,12 +8,13 @@
    * [简易操作流程图](https://github.com/Jjing95/md-study2#1%E7%AE%80%E6%98%93%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE)
    * [长图设计稿处理规范问题](https://github.com/Jjing95/md-study2#2%E9%95%BF%E5%9B%BE%E8%AE%BE%E8%AE%A1%E7%A8%BF%E5%A4%84%E7%90%86%E8%A7%84%E8%8C%83%E9%97%AE%E9%A2%98)
        - [psd目录结构示意图](https://github.com/Jjing95/md-study2#1psd%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE)
-       - [需要分部加载时的psd](https://github.com/Jjing95/md-study2#2%E9%9C%80%E8%A6%81%E5%88%86%E9%83%A8%E5%8A%A0%E8%BD%BD%E6%97%B6%E7%9A%84psd)
+       - [需要分步加载时的psd](https://github.com/Jjing95/md-study2#2%E9%9C%80%E8%A6%81%E5%88%86%E9%83%A8%E5%8A%A0%E8%BD%BD%E6%97%B6%E7%9A%84psd)
        - [长图部分图层命名规范示意图与详解](https://github.com/Jjing95/md-study2#3%E9%95%BF%E5%9B%BE%E9%83%A8%E5%88%86%E5%9B%BE%E5%B1%82%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E7%A4%BA%E6%84%8F%E5%9B%BE%E4%B8%8E%E8%AF%A6%E8%A7%A3)
-   * [帧动画、音效和分部加载配置文件的规范](https://github.com/Jjing95/md-study2#3%E5%B8%A7%E5%8A%A8%E7%94%BB%E9%9F%B3%E6%95%88%E5%92%8C%E5%88%86%E9%83%A8%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E8%8C%83)
+   * [帧动画、音效和分步加载配置文件的规范](https://github.com/Jjing95/md-study2#3%E5%B8%A7%E5%8A%A8%E7%94%BB%E9%9F%B3%E6%95%88%E5%92%8C%E5%88%86%E9%83%A8%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E8%8C%83)
        - [帧动画配置文件（ani_config.js）](https://github.com/Jjing95/md-study2#1%E5%B8%A7%E5%8A%A8%E7%94%BB%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6ani_configjs)
        - [音效配置文件（effect_config.js）](https://github.com/Jjing95/md-study2#2%E9%9F%B3%E6%95%88%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6effect_configjs)
-       - [分部加载配置文件（res_config.js）](https://github.com/Jjing95/md-study2#3-%E5%88%86%E9%83%A8%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6res_configjs)
+       - [分步加载配置文件（res_config.js）](https://github.com/Jjing95/md-study2#3-%E5%88%86%E9%83%A8%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6res_configjs)
+   * [长图资源过多时的分步加载]()
    * [项目代码中的关键文件](https://github.com/Jjing95/md-study2#4%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E6%96%87%E4%BB%B6)
        - [index.html](https://github.com/Jjing95/md-study2/blob/main/README.md#1indexhtml)
        - [BaseScene.js](https://github.com/Jjing95/md-study2#2basescenejs)
@@ -30,7 +31,7 @@
 **--type layer**</br>
 上图中的`p0_0 --type layer`为一个透明的空白浮层，作为滑动浮层使用</br>
 而`p0_2 --type layer`则是放置内容的图层文件，代表这个文件内的所有图层均处于同一页面上，长图项目则主要就为这一页。</br>
-#### 2）需要分部加载时的psd
+#### 2）需要分步加载时的psd
 * **game.psd**  放置所有图层，只进行`npm run export2`操作，获取所有图层信息（位置，类型等）
 * **game_n.psd**  根据图层的长度均分成n份，放置n份长图的图层，进行`npm run export2000 n`和`npm run pack2000`操作，获取精灵图和背景图（不需要管psd中图层的位置和层级）</br>
 **注意：背景和所有的按钮需要放在一开始就加载的psd中**
@@ -43,7 +44,7 @@
 &emsp;&emsp;<strong>--rate</strong>后面的数字则是控制一秒内显示的图片数量，后面跟的数字越大，帧动画播放越快；反之，越慢。</br>
 &emsp;&emsp;<strong>--loop</strong>后面的<strong>true</strong>或者<strong>false</strong>则代表帧动画是否需要循环播放，<strong>true</strong>为循环播放，<strong>false</strong>则为只播放一次。</br>
 &emsp;&emsp;<strong>--autoplay</strong>后面的<strong>true</strong>或者<strong>false</strong>则代表的是帧动画是否需要自动播放，<strong>true</strong>为自动播放，<strong>false</strong>则为需要通过事件触发</br>
-### 3、帧动画、音效和分部加载配置文件的规范
+### 3、帧动画、音效和分步加载配置文件的规范
 #### 1）帧动画配置文件（ani_config.js）
 ```javascript
 var anis=[
@@ -62,7 +63,7 @@ var effects=[
 ]
 //[name,y（音乐开始播放的y）,y+h（音乐结束播放的y),0,null,isloop(是否循环播放)]
 ```
-#### 3) 分部加载配置文件（res_config.js）
+#### 3) 分步加载配置文件（res_config.js）
 ```javascript
 game.resList=[
 ['1',0,4800,false,8], //fales可以直接改为true
@@ -71,7 +72,44 @@ game.resList=[
 ];
 //123是psd处理时a后面的数字 0，500，2900是指开始加载的位置（提前加载），14318是最大的位置（也就是最后的位置），false代表是否加载过，8，2，2对应精灵图数分别有多少
 ```
-### 4、项目代码中的关键文件
+### 4、长图资源过多时的分步加载
+* 在处理图层时需要注意所有元素都需要处理，但是不需要写入信息和打包，背景和所有按钮都放在一开始就加载的psd里;</br>
+* 将需要分步加载的资源整理分成不同的psd文件，然后剩下必须要加载的整合成一个psd，处理记录信息，并分开来拼合成精灵图，这样需要使用哪个资源就只需要加载该资源所在的精灵图，剩下来的就不需要加载了;</br>
+* 在处理完图层和数据之后要在config.js里面把和后面加载的东西一样的部分给删掉，防止预加载
+* 代码部分需要注意,滑动的时候异步加载，通过传参调用tlayer.js中封装好的addEles函数，实则调用的是game.js中的loadELse函数
+```javascript
+//TLayer.js
+addElse: function (num, name, callback) {
+	  var self = this;
+	  game['loadElse'](num, name, function (num, name) {
+    		// console.log(game['resources']['res' + name])
+    		cc.loader.load(game['resources']['res' + name],
+		    function (result, count, loadedCount) {
+	    		// console.log(result)
+		    },
+		    function () {
+	    		  for (var i = 0; i < num; i++) {
+				        cc.spriteFrameCache.addSpriteFrames(game['baseUrl'] + 'res/' + name + '/GameAssets_' + i + '.plist', game['baseUrl'] + 'res/' + name + '/GameAssets_' + i + '.png');
+	    		  }
+	    		  self.initUI(name);
+	    		  callback && callback()
+		    });
+	  })
+},
+//game.js
+loadElse: function (num, name, callback) {
+	  var g_resources2 = this['resources']['res' + name];
+    // console.log(num)
+    //加载对应年代的精灵图
+    for (var i = 0; i < num; i++) {
+        g_resources2.push(game['baseUrl'] + 'res/' + name + '/GameAssets_' + i + '.png')
+        g_resources2.push(game['baseUrl'] + 'res/' + name + '/GameAssets_' + i + '.plist')
+    }
+    // console.log(g_resources2)
+    callback && callback(num, name);
+},
+```
+### 5、项目代码中的关键文件
 #### 1）index.html
 设计实现项目加载页内容和适配原则以及引入原生css文件以及部分需要提前引入的js资源库，下方为简单示例
 ```html
@@ -154,3 +192,106 @@ getBase64:function(data,callback){
 ```    
 #### 4）TLayer.js
 项目中的逻辑代码部分则主要在这个文件中实现,以下是部分功能函数代码展示。
+
+* 实现长图滑动的关键代码函数，具体解释有在代码上进行注释
+```javascript
+this.setCallback(
+    function (touch, event) {
+        // console.log('touch end');
+        canAutoScroll = true;
+    },
+    function (touch, event) {
+        var delta = touch.getDelta();
+        var nowTime = +new Date();
+        if (lastTime) {
+            velY = (delta.y / (nowTime - lastTime)) * 1000;
+            velY = Math.max(Math.min(velY, 3000), -3000);
+        }
+        lastTime = nowTime;
+        // p0_1.y += delta.y;
+        if (game['isMove']) {
+            p0_1.moveY(delta.y);//调用case‘p0_1’中定义的moveY函数，并且给它一个delta.y的参数
+        }
+    },
+    function (touch, event) {
+        game['isMove'] = true;
+    }
+);
+this.moveY = function (deltaY) {
+    //deltay是滑动距离
+    //minY为初始y值，maxY为当前能滑动的最大y值
+    self.y = Math.min(Math.max(self.y + deltaY, minY), maxY)
+    self.percent = (self.y - minY) / (maxY - minY)
+    game['nowY'] = self.y
+    //game['nowY']及时存储滑动到哪了
+    checkY(self.y, self.percent)
+    // console.log(self.y,maxY,'y,maxY');
+}
+```
+* 长图中的按钮点击与实现
+&emsp;起初在项目图层处理时，需要将每个按钮的图层名称后面加上--**button**
+&emsp;然后再通过在**按钮元素.setCallback**的回调函数中控制点击以后触发的事件
+```javascript
+var item = self.getChildByName(" "); //" "中为图层名
+item.setCallback(function () {
+ //按钮点击后的一系列事件	    
+})
+```
+* 控制帧动画的播放
+&emsp;当识别到长图滑动到某个位置需要播放某个帧动画时，调用showAni()函数
+```javascript
+self.getChildByName(' ').showAni(); //' '中为帧动画文件组名
+//框架BaseAnimationSprite.js文件中
+showAni: function (callback) {
+    var self = this;
+    if (this.loops) {
+        this.runAction(
+            cc.repeatForever(
+                cc.sequence(
+                    cc.animate(this['ani'])
+                )
+            )
+        )
+    } else {
+        this.runAction(
+            cc.sequence(
+                cc.animate(this['ani']),
+                cc.callFunc(function(){
+                    callback && callback();
+                })
+            )
+        )
+    }
+}
+```
+* 控制元素进行动画</br>
+&emsp;一个元素依次执行一个或多个动画
+```javascript
+item.runAction(
+    cc.sequence(   //sequence是依次执行
+         cc.scaleTo(1,1),   //（时间，最终scale值）先将元素的scale值设为初始需要的值，再运用scaleTo
+         cc.callFunc(function(){
+            //上方功能函数执行完后，紧接着执行的逻辑代码
+         })
+    )
+)
+```
+&emsp;一个元素同步执行多个动画
+```javascript
+item.runAction(
+    cc.spawn(    //spqwn是同步执行
+        cc.fadeIn(delay), //(秒数)
+        cc.moveBy(0.8, _X, 0) //（秒数，x轴移动距离，y轴移动距离）
+    )
+)
+```
+&emsp;一个元素反复执行一个动画
+```javascript
+item.runAction(
+    cc.repeatForever(  //repeatForever是一直反复执行
+        cc.rotateBy(1.0, 360) //（秒数，转动角度） 一秒转动360度
+    )    
+)
+```
+</br>
+至此，以上就是我在长图项目的学习过程中，对于长图开发的流程以及知识梳理。
