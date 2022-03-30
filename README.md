@@ -121,6 +121,7 @@ loadElse: function (num, name, callback) {
 <script src="libs/jquery-2.1.3.min.js"></script>
 ```
 #### 2）BaseScene.js
+长图最关键的适配原则就放置于这个文件夹中,以下则是实现适配的关键函数
 ```javascript
 resize: function () {
     var w1 = window.innerWidth;
