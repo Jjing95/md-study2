@@ -76,7 +76,7 @@ game.resList=[
 * 在处理图层时需要注意所有元素都需要处理，但是不需要写入信息和打包，背景和所有按钮都放在一开始就加载的psd里;</br>
 * 将需要分步加载的资源整理分成不同的psd文件，然后剩下必须要加载的整合成一个psd，处理记录信息，并分开来拼合成精灵图，这样需要使用哪个资源就只需要加载该资源所在的精灵图，剩下来的就不需要加载了;</br>
 * 在处理完图层和数据之后要在config.js里面把和后面加载的东西一样的部分给删掉，防止预加载
-* 代码部分需要注意,滑动的时候异步加载，通过传参调用tlayer.js中封装好的addEles函数，实则调用的是game.js中的loadELse函数
+* 代码部分需要注意,滑动的时候异步加载，通过传参调用TLayer.js中封装好的addElse函数，实则调用的是game.js中的loadELse函数
 ```javascript
 //TLayer.js
 addElse: function (num, name, callback) {
