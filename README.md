@@ -46,10 +46,9 @@
 
 ### 3）图层命名规范
 <img src="./eg_btn_ani.png" alt="image">  
-   按钮相关的图层需要在文件名后面加上--**type button**  
-   
+   按钮相关的图层需要在文件名后面加上--type button
 <img src="./eg_ani.jpg" alt="image">  
-   帧动画的文件组名需要在名字后面加上--**type animation**  
+   帧动画的文件组名需要在名字后面加上--type animation
 
    **--rate**后面的数字则是控制一秒内显示的图片数量，后面跟的数字越大，帧动画播放越快；反之，越慢。  
    **--loop**后面的**true**或者**false**则代表帧动画是否需要循环播放，**true**为循环播放，**false**则为只播放一次。  
