@@ -21,7 +21,7 @@
        - [game.js](https://github.com/Jjing95/md-study2#3gamejs)
        - [TLayer.js](https://github.com/Jjing95/md-study2#4tlayerjs)
 ### 1、简易操作流程图
-下图是我对于长途项目的整体流程的一个简单描述，细节部分请接着往下看。
+下图是我对于长图项目的整体流程的一个简单描述，细节部分请接着往下看。
 <img src="./sop.jpg" alt="image" width="474px" height="295px" align="center">
 ### 2、长图设计稿处理规范问题
 #### 1）psd目录结构示意图
