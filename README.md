@@ -7,15 +7,15 @@
 ## 目录
    * [简易开发流程图](#1%E7%AE%80%E6%98%93%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE)
    * [设计稿处理](#2%E8%AE%BE%E8%AE%A1%E7%A8%BF%E5%A4%84%E7%90%86)
-       - [psd目录结构](#1psd%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE)
-       - [需分步加载时的psd](#2%E9%9C%80%E8%A6%81%E5%88%86%E6%AD%A5%E5%8A%A0%E8%BD%BD%E6%97%B6%E7%9A%84psd)
-       - [图层的规范命名](#3%E9%95%BF%E5%9B%BE%E9%83%A8%E5%88%86%E5%9B%BE%E5%B1%82%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E7%A4%BA%E6%84%8F%E5%9B%BE%E4%B8%8E%E8%AF%A6%E8%A7%A3)
-   * [配置文件的规范](#3%E5%B8%A7%E5%8A%A8%E7%94%BB%E9%9F%B3%E6%95%88%E5%92%8C%E5%88%86%E6%AD%A5%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E8%8C%83)
+       - [psd目录结构](#1psd%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84)
+       - [需分步加载时的psd](#2%E9%9C%80%E5%88%86%E6%AD%A5%E5%8A%A0%E8%BD%BD%E6%97%B6%E7%9A%84psd)
+       - [图层命名规范](#3%E5%9B%BE%E5%B1%82%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83)
+   * [配置文件的规范](#3%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E8%8C%83)
        - [帧动画配置文件（ani_config.js）](#1%E5%B8%A7%E5%8A%A8%E7%94%BB%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6ani_configjs)
        - [音效配置文件（effect_config.js）](#2%E9%9F%B3%E6%95%88%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6effect_configjs)
        - [分步加载配置文件（res_config.js）](#3-%E5%88%86%E6%AD%A5%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6res_configjs)
-   * [分步加载](#4%E9%95%BF%E5%9B%BE%E8%B5%84%E6%BA%90%E8%BF%87%E5%A4%9A%E6%97%B6%E7%9A%84%E5%88%86%E6%AD%A5%E5%8A%A0%E8%BD%BD)
-   * [代码中的关键文件](#5%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E6%96%87%E4%BB%B6)
+   * [分步加载](#4%E5%88%86%E6%AD%A5%E5%8A%A0%E8%BD%BD)
+   * [代码中的关键文件](#5%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E6%96%87%E4%BB%B6)
        - [index.html](#1indexhtml)
        - [BaseScene.js](#2basescenejs)
        - [game.js](#3gamejs)
@@ -45,10 +45,10 @@
 
 ### 3）图层命名规范
 <img src="./eg_btn_ani.png" alt="image">  
-   按钮相关的图层需要在文件名后面加上--**type button**
+   按钮相关的图层需要在文件名后面加上 **--type button**
 
 <img src="./eg_ani.jpg" alt="image">  
-   帧动画的文件组名需要在名字后面加上--**type animation**  
+   帧动画的文件组名需要在名字后面加上 **--type animation**  
 
    **--rate**后面的数字则是控制一秒内显示的图片数量，后面跟的数字越大，帧动画播放越快；反之，越慢。  
    **--loop**后面的**true**或者**false**则代表帧动画是否需要循环播放，**true**为循环播放，**false**则为只播放一次。  
@@ -245,8 +245,8 @@ this.moveY = function (deltaY) {
     // console.log(self.y,maxY,'y,maxY');
 }
 ```
-***长图中的按钮点击与实现***
-   起初在项目图层处理时，需要将每个按钮的图层名称后面加上--**button**
+***长图中的按钮点击与实现***  
+   起初在项目图层处理时，需要将每个按钮的图层名称后面加上 **--button**
    然后再通过在**按钮元素.setCallback**的回调函数中控制点击以后触发的事件
 ```javascript
 var item = self.getChildByName(" "); //" "中为图层名
@@ -255,7 +255,7 @@ item.setCallback(function () {
 })
 ```
 ***控制帧动画的播放***  
-   当识别到长图滑动到某个位置需要播放某个帧动画时，调用showAni()函数
+   当识别到长图滑动到某个位置需要播放某个帧动画时，调用**showAni()** 函数
 ```javascript
 self.getChildByName(' ').showAni(); //' '中为帧动画文件组名
 //框架BaseAnimationSprite.js文件中
