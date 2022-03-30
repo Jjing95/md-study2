@@ -15,8 +15,8 @@
        - [音效配置文件（effect_config.js）](#2%E9%9F%B3%E6%95%88%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6effect_configjs)
        - [分步加载配置文件（res_config.js）](#3-%E5%88%86%E6%AD%A5%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6res_configjs)
    * [命令行语句](#4%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%AF%AD%E5%8F%A5)
-   * [分步加载](#4%E5%88%86%E6%AD%A5%E5%8A%A0%E8%BD%BD)
-   * [代码中的关键文件](#5%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E6%96%87%E4%BB%B6)
+   * [分步加载](#5%E5%88%86%E6%AD%A5%E5%8A%A0%E8%BD%BD)
+   * [代码中的关键文件](#6%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E6%96%87%E4%BB%B6)
        - [index.html](#1indexhtml)
        - [BaseScene.js](#2basescenejs)
        - [game.js](#3gamejs)
@@ -46,10 +46,10 @@
 
 ### 3）图层命名规范
 <img src="./eg_btn_ani.png" alt="image">  
-   按钮相关的图层需要在文件名后面加上 **--type button**  
+   按钮相关的图层需要在文件名后面加上--**type button**  
    
 <img src="./eg_ani.jpg" alt="image">  
-   帧动画的文件组名需要在名字后面加上 **--type animation**  
+   帧动画的文件组名需要在名字后面加上--**type animation**  
 
    **--rate**后面的数字则是控制一秒内显示的图片数量，后面跟的数字越大，帧动画播放越快；反之，越慢。  
    **--loop**后面的**true**或者**false**则代表帧动画是否需要循环播放，**true**为循环播放，**false**则为只播放一次。  
